@@ -141,3 +141,14 @@ input[type="button"] {
     width: 100%;
   }
 }
+
+.btn {
+  &-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    &:hover,
+    &:not(:disabled):not(.disabled):active {
+    }
+  }
+}
+

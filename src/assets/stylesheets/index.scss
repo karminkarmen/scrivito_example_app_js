@@ -132,24 +132,26 @@ body {
 }
 
 a {
-  color: $primary;
+  color: var(--primary);
   text-decoration: none;
 }
 a:hover,
 a:active,
 a:focus {
-  color: darken($primary, 5%);
+  //-webkit-filter: brightness(95%);
+  //filter: brightness(95%);
+  //color: var(--primary);
   text-decoration: underline;
   outline: none!important;
 }
 button:focus { outline: none!important; }
 ::selection {
   color: #fff;
-  background: $secondary;
+  background: var(--secondary);
 }
 ::-moz-selection {
   color: #fff;
-  background: $secondary;
+  background: var(--secondary);
 }
 
 p {
@@ -293,7 +295,7 @@ img,
 
 mark,
 .mark {
-  background-color: $secondary;
+  background-color: var(--secondary);
   color: #fff;
   padding: 0 0.2em;
 }
@@ -314,7 +316,7 @@ small,
 }
 
 .fa {
-  color: $secondary;
+  color: var(--secondary);
 }
 
 .text-greymiddle {
@@ -326,12 +328,12 @@ small,
   font-weight: 700;
   font-size: 180px;
   text-transform: uppercase;
-  color: $secondary !important;
+  color: var(--secondary) !important;
   line-height: 1;
   margin: 0 0 20px 0;
 }
 .bg-dark-image .hero-bold {
-  color: $secondary !important;
+  color: var(--secondary) !important;
 }
 .hero-small {
   font-family: "Source Sans Pro", sans-serif;
@@ -390,7 +392,7 @@ small,
   padding-right: 0;
 }
 .btn-clear .fa {
-  color: $primary;
+  color: var(--primary);
 }
 .btn-clear:hover,
 .btn-clear:active,
@@ -400,7 +402,7 @@ small,
 
 .btn-white-transparent {
   background: rgba(255, 255, 255, 0.1);
-  color: $secondary;
+  color: var(--secondary);
 }
 .btn-white-transparent:hover {
   background: rgba(255, 255, 255, 0.2);
@@ -515,10 +517,10 @@ $easing: cubic-bezier(0.7, 0, 0, 0.7);
 }
 
 .bg-brand-primary {
-  background: $primary;
+  background: var(--primary);
 }
 .bg-brand-secondary {
-  background: $secondary;
+  background: var(--secondary);
 }
 
 .bg-dark-image {
@@ -683,7 +685,7 @@ section.navbar-fixed { padding-top: 80px; }
 
 .nav li.active > a,
 .nav li.active > .menu-toggle {
-  background: $primary !important;
+  background: var(--primary) !important;
   color: #fff !important;
 }
 
@@ -740,7 +742,7 @@ section.navbar-fixed { padding-top: 80px; }
 }
 .nav .dropdown-menu > li.active > a:hover,
 .nav .dropdown-menu > li.active > a:focus {
-  background: $primary;
+  background: var(--primary);
   color: #fff;
 }
 .open > .dropdown-menu {
@@ -787,14 +789,14 @@ section.navbar-fixed { padding-top: 80px; }
   background: #fff !important;
 }
 .navbar-toggler:not(.collapsed) .icon-bar {
-  background: $secondary !important;
+  background: var(--secondary) !important;
 }
 
 .navbar-toggler .icon-bar {
   display: block;
   height: 2px;
   border-radius: 1px;
-  background: $secondary;
+  background: var(--secondary);
   width: 30px;
 }
 .navbar-toggler .icon-bar + .icon-bar {
@@ -805,7 +807,7 @@ section.navbar-fixed { padding-top: 80px; }
   background: #fff;
 }
 .scrolled.bg-dark-image .navbar-toggler .icon-bar {
-  background: $secondary;
+  background: var(--secondary);
 }
 
 /* menu toggle */
@@ -827,11 +829,13 @@ section.navbar-fixed { padding-top: 80px; }
   font-size: 22px;
   text-align: center;
   margin: 0 auto;
-  color: $primary;
+  color: var(--primary);
   @include transition(transform 0.2s ease-in-out);
 }
 .menu-toggle:hover .fa {
-  color: darken($primary, 15%);
+  //-webkit-filter: brightness(85%);
+  //filter: brightness(85%);
+  //color: var(--primary);
 }
 .active .menu-toggle .fa {
   color: #fff;
@@ -846,7 +850,7 @@ section.navbar-fixed { padding-top: 80px; }
   color: #fff !important;
 }
 .nav > li.active > .menu-toggle {
-  background: $primary !important;
+  background: var(--primary) !important;
   color: #fff !important;
 }
 .scrolled.bg-dark-image .nav > li.active > a,
@@ -880,7 +884,7 @@ section.navbar-fixed { padding-top: 80px; }
 .navbar-search-toggle .fa {
   font-size: 22px;
   padding: 0;
-  color: $secondary;
+  color: var(--secondary);
 }
 .navbar-search-toggle.disabled .fa {
   color: $btn-link-disabled-color;
@@ -926,8 +930,8 @@ section.navbar-fixed { padding-top: 80px; }
 }
 .search-box .btn-search {
   border-radius: 0 50px 50px 0 !important;
-  background: $secondary;
-  border-color: $secondary;
+  background: var(--secondary);
+  border-color: var(--secondary);
   padding: 3px 10px;
   min-height: 36px;
   margin: 0;
@@ -949,7 +953,7 @@ section.navbar-fixed { padding-top: 80px; }
 .search-box .btn-clear-white .fa {
   font-size: 20px;
   padding: 0 0 3px 0;
-  color: $secondary;
+  color: var(--secondary);
   text-align: center;
 }
 
@@ -1088,11 +1092,13 @@ section.navbar-fixed { padding-top: 80px; }
     font-size: 26px;
     text-align: center;
     margin: 0 auto;
-    color: $primary;
+    color: var(--primary);
     @include transition(all 0.2s ease-in-out);
   }
   .menu-toggle:hover .fa {
-    color: darken($primary, 50%);
+    //-webkit-filter: brightness(50%);
+    //filter: brightness(50%);
+    //color: var(--primary);
   }
   .active .menu-toggle .fa {
     color: #fff;
@@ -1143,7 +1149,7 @@ section.navbar-fixed { padding-top: 80px; }
 }
 
 .nav-centered .nav-pills .active .nav-link {
-  border: 1px solid $primary;
+  border: 1px solid var(--primary);
 }
 
 
@@ -1299,7 +1305,7 @@ section.navbar-fixed { padding-top: 80px; }
 =================================================================== */
 
 .quote-headline {
-  color: $secondary !important;
+  color: var(--secondary) !important;
   font-size: 200px;
   line-height: 0;
   margin: 65px 0 0 0;
@@ -1346,7 +1352,7 @@ section.navbar-fixed { padding-top: 80px; }
 }
 
 .fact .value {
-  color: $secondary;
+  color: var(--secondary);
   font-size: 80px;
   line-height: 80px;
   font-family: "PT Sans Narrow";
@@ -1418,7 +1424,7 @@ section.navbar-fixed { padding-top: 80px; }
   @extend .justify-content-center;
   width: 100%;
   height: 100%;
-  background: rgba($primary, 0.7);
+  background: rgba(var(--primary), 0.7);
   @include transition(all 0.5s ease-in-out);
 }
 .gallery-box-content-wrapper:hover {
@@ -1592,7 +1598,7 @@ section.navbar-fixed { padding-top: 80px; }
   position: absolute;
   top: 20px;
   right: -40px;
-  background: $secondary;
+  background: var(--secondary);
   z-index: 100;
   border-radius: 50%;
 }
@@ -1736,7 +1742,7 @@ section.navbar-fixed { padding-top: 80px; }
   font-family: "PT Sans Narrow", sans-serif;
   font-weight: 700;
   text-align: center;
-  background: $secondary;
+  background: var(--secondary);
   border-radius: 50%;
 }
 .bg-nav-content .nav-centered .nav-blog .fa {
@@ -1853,7 +1859,7 @@ _:-ms-fullscreen,
 }
 .box-card:hover {
   text-decoration: none;
-  outline: 4px solid $secondary;
+  outline: 4px solid var(--secondary);
 }
 .box-card .box-date {
   position: absolute;
@@ -1862,7 +1868,7 @@ _:-ms-fullscreen,
   display: block;
   width: 60px;
   height: 60px;
-  background: $secondary;
+  background: var(--secondary);
   color: #fff;
   border-radius: 50%;
   line-height: 60px;
@@ -1895,14 +1901,14 @@ _:-ms-fullscreen,
   display: block;
   bottom: 28px;
   right: 30px;
-  color: $secondary !important;
+  color: var(--secondary) !important;
 }
 .box-card .box-topic .h3 {
   margin: 0;
   color: $theme-greydark !important;
 }
 .box-card .box-topic span i {
-  color: $secondary !important;
+  color: var(--secondary) !important;
   padding: 0 10px 0 0;
 }
 .box-card .box-topic span {
@@ -2054,7 +2060,7 @@ _:-ms-fullscreen,
 .charts .chart.featured:after {
   content: "popular";
   color: #fff;
-  background: $secondary;
+  background: var(--secondary);
   font-size: 12px;
   font-weight: 700;
   padding: 0 8px;
@@ -2093,7 +2099,7 @@ _:-ms-fullscreen,
   vertical-align: middle !important;
 }
 .table-features .fa {
-  color: $secondary;
+  color: var(--secondary);
   font-size: 25px;
   line-height: 20px;
 }
@@ -2157,7 +2163,7 @@ _:-ms-fullscreen,
 }
 .table-features tfoot th,
 .table-features tfoot td {
-  background: $secondary;
+  background: var(--secondary);
   color: #fff;
 }
 
@@ -2205,7 +2211,7 @@ _:-ms-fullscreen,
   }
   .table-features tbody tr:nth-child(even) th,
   .table-features tbody tr:nth-child(odd) th {
-    background: $secondary !important;
+    background: var(--secondary) !important;
     color: #fff;
   }
   .table-features tbody tr:nth-child(even) td {
@@ -2255,7 +2261,7 @@ _:-ms-fullscreen,
   height: 40px;
   line-height: 38px;
   color: #fff;
-  background: $primary;
+  background: var(--primary);
   text-shadow: none;
 }
 .carousel-control.right .fa {
@@ -2462,30 +2468,25 @@ _:-ms-fullscreen,
   height: 50px;
   border-radius: 50%;
   overflow: hidden;
-  background: $secondary;
+  background: var(--secondary);
   background: -moz-linear-gradient(
-    left,
-    $secondary 10%,
+    left, var(--secondary) 10%,
     rgba(255, 255, 255, 0) 42%
   );
   background: -webkit-linear-gradient(
-    left,
-    $secondary 10%,
+    left, var(--secondary) 10%,
     rgba(255, 255, 255, 0) 42%
   );
   background: -o-linear-gradient(
-    left,
-    $secondary 10%,
+    left, var(--secondary) 10%,
     rgba(255, 255, 255, 0) 42%
   );
   background: -ms-linear-gradient(
-    left,
-    $secondary 10%,
+    left, var(--secondary) 10%,
     rgba(255, 255, 255, 0) 42%
   );
   background: linear-gradient(
-    to right,
-    $secondary 10%,
+    to right, var(--secondary) 10%,
     rgba(255, 255, 255, 0) 42%
   );
   -webkit-animation: load3 1.4s infinite linear;
@@ -2494,7 +2495,7 @@ _:-ms-fullscreen,
 .loader:before {
   width: 50%;
   height: 50%;
-  background: $secondary;
+  background: var(--secondary);
   border-radius: 100% 0 0 0;
   position: absolute;
   top: 0;
@@ -2655,7 +2656,7 @@ _:-ms-fullscreen,
 
   .slick-dots li button:before {
     content: "";
-    border: 3px solid $secondary;
+    border: 3px solid var(--secondary);
     display: block;
     width: 100%;
     max-width: 180px;
@@ -2770,7 +2771,7 @@ _:-ms-fullscreen,
   border: 1px solid $theme-greylight;
 }
 .floating-label .form-control:focus {
-  box-shadow: 0 0 0 2px $secondary;
+  box-shadow: 0 0 0 2px var(--secondary);
 }
 
 .floating-label .checkbox label {
@@ -2843,10 +2844,10 @@ _:-ms-fullscreen,
 }
 
 .bg-brand-primary .hr-icon img {
-  background-color: $primary;
+  background-color: var(--primary);
 }
 .bg-brand-secondary .hr-icon img {
-  background-color: $secondary;
+  background-color: var(--secondary);
 }
 
 @media (max-width: 767px) {
