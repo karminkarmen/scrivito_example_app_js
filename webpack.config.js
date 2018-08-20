@@ -8,6 +8,8 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const ProgressBarPlugin = require("progress-bar-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const ZipPlugin = require("zip-webpack-plugin");
+const history = require("connect-history-api-fallback");
+const convert = require("koa-connect");
 const AddSitemapToRedirectsWebpackPlugin = require("./add-sitemap-to-redirects-webpack-plugin");
 
 // load ".env"
@@ -169,6 +171,20 @@ module.exports = (env = {}) => {
       },
       headers: {
         "Access-Control-Allow-Origin": "*",
+      },
+    },
+    serve: {
+      content: [__dirname],
+      add: app => {
+        const historyOptions = {
+          index: "/index.html",
+          dev: {
+            headers: {
+              "Access-Control-Allow-Origin": "*",
+            },
+          },
+        };
+        app.use(convert(history(historyOptions)));
       },
     },
   };
