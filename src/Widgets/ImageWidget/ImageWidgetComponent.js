@@ -1,5 +1,7 @@
 import * as React from "react";
 import * as Scrivito from "scrivito";
+import Zoom from "react-reveal/Zoom";
+import Fade from "react-reveal/Fade";
 
 Scrivito.provideComponent("ImageWidget", ({ widget }) => {
   let image = (
@@ -19,7 +21,15 @@ Scrivito.provideComponent("ImageWidget", ({ widget }) => {
     return <div className={`text-${widget.get("alignment")}`}>{image}</div>;
   }
 
-  return image;
+  const animation = widget.get("animation");
+  const additionalProps = {
+    "": animation,
+  };
+
+  if (animation === "Zoom") {
+    return <Zoom>{image}</Zoom>;
+  }
+  return <Fade {...additionalProps}>{image}</Fade>;
 });
 
 function alternativeText(widget) {
