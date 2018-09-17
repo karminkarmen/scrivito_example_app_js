@@ -1,0 +1,214 @@
+.image {
+    width: 700px;
+    z-index: -3;
+}
+
+.right {
+    position: relative;
+    right: 60px;
+    transform: rotate(90deg);
+    cursor: pointer;
+}
+
+.left {
+    position: relative;
+    left: 60px;
+    transform: rotate(-90deg);
+    cursor: pointer;
+}
+
+div.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 30px 10px;
+}
+
+/*A R R O W 1*/
+.arrow-slide-right {
+    background-color: transparent;
+    height: 40px;
+    width: 40px;
+    display: block;
+    border: 1px solid white;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    opacity: 0.7;
+}
+
+.arrow-slide-left {
+    background-color: transparent;
+    height: 40px;
+    width: 40px;
+    display: block;
+    border: 1px solid white;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    opacity: 0.7;
+}
+
+.arrow-slide {
+    left: 0;
+    top: -100%;
+    width: 100%;
+    height: 100%;
+    background: white;
+    position: absolute;
+    display: block;
+    z-index: 0;
+}
+
+.left-arm {
+    position: absolute;
+    z-index: 1;
+    background-color: transparent;
+    top: 19px;
+    left: 3px;
+    width: 20px;
+    display: block;
+    transform: rotate(-45deg);
+}
+
+.left-arm:after {
+     content: "";
+     background-color: white;
+     width: 20px;
+     height: 1px;
+     display: block;
+     border-radius: 1px;
+     transform-origin: right center;
+     z-index: -1;
+ }
+
+.right-arm {
+    position: absolute;
+    z-index: 1;
+    background-color: transparent;
+    top: 19px;
+    left: 17px;
+    width: 20px;
+    display: block;
+    transform: rotate(45deg);
+    border-radius: 2px;
+}
+
+.right-arm:after {
+     content: "";
+     background-color: white;
+     width: 20px;
+     height: 1px;
+     display: block;
+     border-radius: 1px;
+     transform-origin: left center;
+     z-index: -1;
+}
+
+.arrow-slide-right:hover, .arrow-slide-left:hover {
+    transition: all 0.2s;
+}
+
+.arrow-slide-right:hover .arrow-slide, .arrow-slide-left:hover .arrow-slide {
+    transition: all 0.2s ease-in-out;
+    transform: translateY(100%);
+}
+
+.arrow-slide-right:hover .right-arm:after, .arrow-slide-right:hover .left-arm:after,
+.arrow-slide-left:hover .right-arm:after, .arrow-slide-left:hover .left-arm:after{
+    background-color: dimgrey;
+    transition: all 0.2s;
+}
+
+
+/*A R R O W 2*/
+.non-border.arrow-slide-right, .non-border.arrow-slide-left {
+    border: none;
+}
+
+.non-border.arrow-slide-right .arrow-slide, .non-border.arrow-slide-left .arrow-slide  {
+    opacity: 0.2;
+}
+
+.non-border.arrow-slide-right:hover, .non-border.arrow-slide-left:hover {
+    transition: all 0.2s;
+}
+
+.non-border.arrow-slide-right:hover .arrow-slide, .non-border.arrow-slide-left:hover .arrow-slide {
+    transition: all 0.2s ease-in-out;
+    transform: translateY(100%);
+}
+
+.non-border.arrow-slide-right:hover .right-arm:after, .non-border.arrow-slide-right:hover .left-arm:after,
+.non-border.arrow-slide-left:hover .right-arm:after, .non-border.arrow-slide-left:hover .left-arm:after{
+    background-color: white;
+    transition: all 0.2s;
+}
+
+
+/*A R R O W 3*/
+polygon {
+    fill: #FFF;
+    transition: all .2s ease-out;
+}
+
+polygon.arrow-middle {
+    opacity: 0.75;
+}
+
+polygon.arrow-top {
+     opacity: 0.5
+}
+
+.multiple-arrows.multiple-left {
+    position: relative;
+    right: 60px;
+    transform: rotate(-90deg);
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.multiple-arrows.multiple-right {
+    position: relative;
+    left: 60px;
+    transform: rotate(90deg);
+    width: 40px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.multiple-arrows:hover polygon {
+    fill: #FFF;
+    transition: all .2s ease-out;
+}
+
+.multiple-arrows:hover polygon.arrow-bottom {
+    transform: translateY(5px) scale(0.5);
+}
+
+.multiple-arrows:hover polygon.arrow-middle {
+    transform: translateY(14px) scale(0.5);
+}
+
+.multiple-arrows:hover polygon.arrow-top {
+    transform: translateY(23px) scale(0.5);
+
+}
+
+
+/*A R R O W 4*/
+.multiple-arrows.triple-arrow:hover polygon.arrow-bottom {
+    transform: translateY(5px) scale(0.5);
+}
+
+.multiple-arrows.triple-arrow:hover polygon.arrow-middle {
+    transform: translateY(9px) scale(0.5);
+    opacity: 0.7;
+}
+
+.multiple-arrows.triple-arrow:hover polygon.arrow-top {
+    transform: translateY(13px) scale(0.5);
+    opacity: 0.4;
+}
