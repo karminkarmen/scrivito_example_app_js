@@ -2,4 +2,5 @@ function importAll(r) {
   r.keys().forEach(r);
 }
 
-importAll(require.context('./', true, /\.js$/));
+// import all js files under src/Objs/
+importAll(require.context("./", true, /\.js$/));

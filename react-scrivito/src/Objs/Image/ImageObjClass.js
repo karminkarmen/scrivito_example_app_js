@@ -1,8 +1,10 @@
-import * as Scrivito from 'scrivito';
+import * as Scrivito from "scrivito";
 
-const Image = Scrivito.provideObjClass('Image', {
+const Image = Scrivito.provideObjClass("Image", {
   attributes: {
-    blob: 'binary',
+    blob: "binary",
+    tags: "stringlist",
+    alternativeText: "string",
   },
 });
 
