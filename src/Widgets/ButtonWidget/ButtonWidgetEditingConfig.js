@@ -32,4 +32,15 @@ Scrivito.provideEditingConfig("ButtonWidget", {
     alignment: "left",
     style: "btn-primary",
   },
+  validations: [
+    [
+      "target",
+
+      target => {
+        if (!target) {
+          return "The link target must be specified.";
+        }
+      },
+    ],
+  ],
 });

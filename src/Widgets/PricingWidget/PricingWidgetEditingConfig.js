@@ -67,4 +67,42 @@ Scrivito.provideEditingConfig("PricingWidget", {
       url: "https://scrivito.com",
     }),
   },
+  validations: [
+    [
+      "currency",
+
+      currency => {
+        if (!currency) {
+          return "The currency must be specified.";
+        }
+      },
+    ],
+    [
+      "smallPlanPrice",
+
+      smallPlanPrice => {
+        if (!smallPlanPrice) {
+          return "The small plan price must be specified.";
+        }
+      },
+    ],
+    [
+      "mediumPlanPrice",
+
+      mediumPlanPrice => {
+        if (!mediumPlanPrice) {
+          return "The medium plan price must be specified.";
+        }
+      },
+    ],
+    [
+      "largePlanPrice",
+
+      largePlanPrice => {
+        if (!largePlanPrice) {
+          return "The large plan price must be specified.";
+        }
+      },
+    ],
+  ],
 });

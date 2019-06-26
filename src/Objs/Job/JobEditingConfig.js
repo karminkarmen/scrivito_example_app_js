@@ -90,4 +90,15 @@ Scrivito.provideEditingConfig("Job", {
     ...metadataInitialContent,
     body: [new SectionWidget({})],
   },
+  validations: [
+    [
+      "title",
+
+      title => {
+        if (title.length === 0) {
+          return "The page title must not be empty.";
+        }
+      },
+    ],
+  ],
 });

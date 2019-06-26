@@ -92,4 +92,15 @@ Scrivito.provideEditingConfig("Homepage", {
     ...metadataInitialContent,
     showAsLandingPage: "no",
   },
+  validations: [
+    [
+      "title",
+
+      title => {
+        if (title.length === 0) {
+          return "The page title must not be empty.";
+        }
+      },
+    ],
+  ],
 });
