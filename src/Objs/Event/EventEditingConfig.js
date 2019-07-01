@@ -75,8 +75,8 @@ Scrivito.provideEditingConfig("Event", {
       "title",
 
       title => {
-        if (title.length === 0) {
-          return "The page title must not be empty.";
+        if (!title) {
+          return "The event title must not be empty.";
         }
       },
     ],

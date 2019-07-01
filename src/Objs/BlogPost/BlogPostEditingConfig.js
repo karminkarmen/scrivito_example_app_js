@@ -8,7 +8,7 @@ import {
   socialCardsPropertiesGroup,
 } from "../_metadataEditingConfig";
 
-const defaultTitle = "Lorem Ipsum";
+const initialTitle = "Lorem Ipsum";
 
 Scrivito.provideEditingConfig("BlogPost", {
   title: "Blog Post",
@@ -38,21 +38,21 @@ Scrivito.provideEditingConfig("BlogPost", {
     ...metadataInitialContent,
     body: [new SectionWidget({})],
     publishedAt: () => new Date(),
-    title: defaultTitle,
+    title: initialTitle,
   },
   validations: [
     [
       "title",
 
       title => {
-        if (title.length === 0) {
-          return "The page title must not be empty.";
+        if (!title) {
+          return "The blog post title must not be empty.";
         }
       },
 
       title => {
-        if (title === defaultTitle) {
-          return "The page title must not be the default one.";
+        if (title === initialTitle) {
+          return "The blog post title must not be the initial content.";
         }
       },
     ],

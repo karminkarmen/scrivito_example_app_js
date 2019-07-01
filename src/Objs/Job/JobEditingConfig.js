@@ -95,8 +95,8 @@ Scrivito.provideEditingConfig("Job", {
       "title",
 
       title => {
-        if (title.length === 0) {
-          return "The page title must not be empty.";
+        if (!title) {
+          return "The job title must not be empty.";
         }
       },
     ],
